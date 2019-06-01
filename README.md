@@ -1,2 +1,3 @@
-# machine_learning_com_caret
-Exercício com pacote Caret para ensaiar para o uso no Azure Machine Learning.
+# Exercício com Pacote Caret
+Demonstrar o uso do pacote Caret para desenvolver modelos de machine learning em R
+Site do pacote: http://topepo.github.io/caret/index.html
