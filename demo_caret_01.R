@@ -20,6 +20,7 @@ names(getModelInfo())
 View(mtcars)
 
 #### 4. Splitting do Dataset ####
+# A variável mpg será a variável alvo
 ?createDataPartition
 index <- createDataPartition(y = mtcars$mpg, p = 0.7, list = FALSE)
 
@@ -30,4 +31,15 @@ ds_teste  <- mtcars[-index, ]
 # ATENÇÃO: Existe a função train() também no pacote generics
 ?caret::train
 
+#### 6. Análise de Relevância das Variáveis ####
+?varImp
+
+# É necessário criar um modelo para analisar a relevância das variáveis
+# Análise de Relevância para um modelo linear
+modelo_v1 <- train(mpg ~., data = ds_treino, method = 'lm')
+varImp(modelo_v1)
+
+# Conforme a análise de relevância, as variáveis cyl e wt possuem força de correlação de 63% e 100% respectivamente
+
+#### 7. Treinamento dos Modelos com as Variáveis mais Relevantes ####
 
